@@ -3,18 +3,19 @@ JavaScript questions
 
 What will be logged for this functions?
 
+**First function**
 ```
 foo();
 function foo() {
 	console.log("Bazinga");
 }
 ```
-Answer: 
+*Answer:*
 
 ```
 Bazinga
 ```
-
+**Second function**
 ```
 foo();
 var foo = function(){
@@ -22,12 +23,12 @@ var foo = function(){
 }
 ```
 
-Answer: 
+*Answer:*
 
 ```
 Error foo is not a function
 ```
-
+**Third function**
 ```
 var bar = "John Doe";
 
@@ -40,7 +41,7 @@ console.log(bar);
 
 ```
 
-Answer: 
+*Answer:*
 
 First log:
 ```
@@ -52,7 +53,7 @@ Second log:
 ```
 Kyle
 ```
-
+**Fourth function**
 ```
 var foo = "Bazinga";
 
@@ -65,7 +66,7 @@ console.log(foo);
 
 ```
 
-Answer:
+*Answer:*
 
 First log:
 ```
@@ -77,7 +78,7 @@ Second log:
 Bazinga
 ```
 
-
+**Fifth function**
 ```
 var foo = "Bazinga";
 
@@ -89,7 +90,7 @@ myFunction();
 console.log(foo);
 ```
 
-Answer: 
+*Answer:*
 
 ```
 Bazinga
