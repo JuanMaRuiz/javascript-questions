@@ -35,7 +35,7 @@ var foo = function(){
 ```
 Error foo is not a function
 ```
-_As I say before, function declarations and function variables are always moved (‘hoisted’) to the top of their JavaScript scope. ```foo``` is moved to the top but not the function._
+_Variables are always moved (‘hoisted’) to the top of their JavaScript scope. ```foo``` is moved to the top but not the function._
 
 **Third function**
 ```
