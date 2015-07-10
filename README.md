@@ -108,9 +108,9 @@ _Function declarations and function variables are always moved (‘hoisted’) t
 
 
 
-**More questions**
+##More questions
 
-[5 Typical JavaScript Interview Exercises](http://www.sitepoint.com/5-typical-javascript-interview-exercises/)
-[5 More JavaScript Interview Exercises](http://www.sitepoint.com/5-javascript-interview-exercises/)
-[JS: Interview Algorithm - Begginer](http://thatjsdude.com/interview/js1.html)
-[JS: Basics and Tricky Questions - Intermediate](http://thatjsdude.com/interview/js2.html)
+* [5 Typical JavaScript Interview Exercises](http://www.sitepoint.com/5-typical-javascript-interview-exercises/)
+* [5 More JavaScript Interview Exercises](http://www.sitepoint.com/5-javascript-interview-exercises/)
+* [JS: Interview Algorithm - Begginer](http://thatjsdude.com/interview/js1.html)
+* [JS: Basics and Tricky Questions - Intermediate](http://thatjsdude.com/interview/js2.html)
