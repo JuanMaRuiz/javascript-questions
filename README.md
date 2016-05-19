@@ -162,6 +162,27 @@ Error!
 **Why?**
 _bar function is assigned to foo var. If you want to call bar function you must to do invoking foo as a function_
 
+**Eighth function**
+```
+var foo = "R2D2";
+
+function bar() {
+	foo = "C3PO";
+	var foo;
+}
+
+bar();
+console.log(foo);
+```
+*Answer:*
+
+```
+R2D2
+```
+**Why?**
+_First you declare a variable in the global scope. Inside bar function you set the value to local foo var to C3PO. Inside bar function var foo is hoisting to the top of his scope (bar function) so
+this value has no effect over global variable foo_
+
 ##More questions
 
 * [5 Typical JavaScript Interview Exercises](http://www.sitepoint.com/5-typical-javascript-interview-exercises/)
