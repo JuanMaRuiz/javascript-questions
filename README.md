@@ -142,46 +142,25 @@ _foo variable in baz function doesn't change the value of the global variable be
 var foo = function bar() {
 	var foo = "Bazinga";
 
-	function baz(foo) {
+	function baz(foo){
 		foo = bar;
 		foo;
 	}
-
 	baz();
-}
+};
 
 foo();
 bar();
+
 ```
 *Answer:*
 
 ```
-"Bazinga"
-"C3PO"
-ReferenceError
-```
-
-**Eighth function**
-```
-var foo = "R2D2";
-
-function bar() {
-	foo = "C3PO";
-	var foo;
-}
-
-bar();
-console.log(foo);
-```
-*Answer:*
-
-```
-R2D2
+Error!
 ```
 
 **Why?**
-_First you declare a variable in the global scope. Inside bar function you set the value to local foo var to C3PO. Inside bar function var foo is hoisting to the top of his scope (bar function) so
-this value has no effect over global variable foo_
+_bar function is assigned to foo var. If you want to call bar function you must to do invoking foo as a function_
 
 ##More questions
 
