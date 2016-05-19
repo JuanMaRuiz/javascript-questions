@@ -137,6 +137,52 @@ ReferenceError
 **Why?**
 _foo variable in baz function doesn't change the value of the global variable because in this function there si a reference in his own scope to a foo variable (passed as an argument). The second log ```bam``` log the value created in baz function because there is no reference inside the function. So JS create an global variable with that value. When you execute baz you get an error because baz is defined inside the bar function scope, so there's no function in the global scope you can call._
 
+**Seventh function**
+```
+var foo = function bar() {
+	var foo = "Bazinga";
+
+	function baz(foo) {
+		foo = bar;
+		foo;
+	}
+
+	baz();
+}
+
+foo();
+bar();
+```
+*Answer:*
+
+```
+"Bazinga"
+"C3PO"
+ReferenceError
+```
+
+**Eighth function**
+```
+var foo = "R2D2";
+
+function bar() {
+	foo = "C3PO";
+	var foo;
+}
+
+bar();
+console.log(foo);
+```
+*Answer:*
+
+```
+R2D2
+```
+
+**Why?**
+_First you declare a variable in the global scope. Inside bar function you set the value to local foo var to C3PO. Inside bar function var foo is hoisting to the top of his scope (bar function) so
+this value has no effect over global variable foo_
+
 ##More questions
 
 * [5 Typical JavaScript Interview Exercises](http://www.sitepoint.com/5-typical-javascript-interview-exercises/)
