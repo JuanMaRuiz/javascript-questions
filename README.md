@@ -1,26 +1,25 @@
 JavaScript questions
 ====================
 
-What will be logged for this functions?
+***What will be logged for this functions?
 
-**First function**
-
-```
-var foo = "Bazinga";
-
-function myFunction() {
-	foo = "Kyle";
-}
-
-myFunction();
-console.log(foo);
-```
-
-*Answer:*
-
-```
-Kyle
-```
+> **First function**
+> 
+> ```
+> var foo = "Bazinga";
+> 
+> function myFunction() {
+> 	foo = "Kyle";
+> }
+> 
+> myFunction();
+> console.log(foo);
+> ```
+> 
+> *Answer:*
+	```
+	Kyle
+	```
 
 **Second function**
 ```
