@@ -3,8 +3,8 @@ JavaScript questions
 
 ***What will be logged for this functions?
 
-> **First function**
-> 
+ **First function**
+
 > ```
 > var foo = "Bazinga";
 > 
@@ -15,172 +15,172 @@ JavaScript questions
 > myFunction();
 > console.log(foo);
 > ```
-> 
+
 > *Answer:*
 	```
 	Kyle
 	```
 
 **Second function**
-```
-foo();
-var foo = function(){
-	console.log("Bazinga");
-}
-```
+> ```
+> foo();
+> var foo = function(){
+> 	console.log("Bazinga");
+> }
+> ```
 
-*Answer:*
-
-```
-Error foo is not a function
-```
-_Variables are always moved (‘hoisted’) to the top of their JavaScript scope. ```foo``` is moved to the top but not the function._
+> *Answer:*
+  ```
+  Error foo is not a function
+  ```
+  _Variables are always moved (‘hoisted’) to the top of their JavaScript scope. ```foo``` is moved to the top but not the function._
 
 **Third function**
-```
-var bar = "John Doe";
+> ```
+> var bar = "John Doe";
+> 
+> if(true){
+> 	var bar = "Kyle";
+> 	console.log(bar);
+> }
+> 
+> console.log(bar);
+> 
+> ```
 
-if(true){
-	var bar = "Kyle";
-	console.log(bar);
-}
+> *Answer:*
 
-console.log(bar);
+  * First log:
+  ```
+  Kyle
+  ```
 
-```
-
-*Answer:*
-
-* First log:
-```
-Kyle
-```
-
-* Second log:
-```
-Kyle
-```
-**Why?**
-_```if``` statements doesn't create his own scope_
+  * Second log:
+  ```
+  Kyle
+  ```
+  **Why?**
+  _```if``` statements doesn't create his own scope_
 
 **Fourth function**
-```
-var foo = "Bazinga";
+> ```
+> var foo = "Bazinga";
+> 
+> function myFunction() {
+> 	var foo = "Kyle";
+> 	console.log(foo);
+> }
+> 
+> myFunction();
+> console.log(foo);
+> 
+> ```
 
-function myFunction() {
-	var foo = "Kyle";
-	console.log(foo);
-}
-
-myFunction();
-console.log(foo);
-
-```
-
-*Answer:*
+> *Answer:*
 
 * First log:
-```
-Kyle
-```
-
-* Second log:
-```
-Bazinga
-```
+    ```
+    Kyle
+    ```
+    
+    * Second log:
+    ```
+    Bazinga
+    ```
 
 **Fifth function**
-```
-foo();
-function foo() {
-	console.log("Bazinga");
-}
-```
-*Answer:*
+> ```
+> foo();
+> function foo() {
+> 	console.log("Bazinga");
+> }
+> ```
 
-```
-Bazinga
-```
+>*Answer:*
 
-**Why?**
-_Function declarations and function variables are always moved (‘hoisted’) to the top of their JavaScript scope._
+  ```
+  Bazinga
+  ```
+
+  **Why?**
+  _Function declarations and function variables are always moved (‘hoisted’) to the top of their JavaScript scope._
 
 **Sixth function**
-```
-var foo = "Bazinga";
+> ```
+> var foo = "Bazinga";
+> 
+> function bar() {
+> 	var foo = "bb-8";
+> 
+> 	function baz(foo){
+> 		foo = "R2D2";
+> 		bam = "C3PO";
+> 	}
+> 
+> 	baz();
+> }
+> 
+> bar();
+> foo;
+> bam;
+> baz();
+> ```
 
-function bar() {
-	var foo = "bb-8";
+> *Answer:*
 
-	function baz(foo){
-		foo = "R2D2";
-		bam = "C3PO";
-	}
+  ```
+  "Bazinga"
+  "C3PO"
+  ReferenceError
+  ```
 
-	baz();
-}
-
-bar();
-foo;
-bam;
-baz();
-```
-*Answer:*
-
-```
-"Bazinga"
-"C3PO"
-ReferenceError
-```
-
-**Why?**
-_foo variable in baz function doesn't change the value of the global variable because in this function there si a reference in his own scope to a foo variable (passed as an argument). The second log ```bam``` log the value created in baz function because there is no reference inside the function. So JS create an global variable with that value. When you execute baz you get an error because baz is defined inside the bar function scope, so there's no function in the global scope you can call._
+  **Why?**
+  _foo variable in baz function doesn't change the value of the global variable because in this function there si a reference in his own scope to a foo variable (passed as an argument). The second log ```bam``` log the value created in baz function because there is no reference inside the function. So JS create an global variable with that value. When you execute baz you get an error because baz is defined inside the bar function scope, so there's no function in the global scope you can call._
 
 **Seventh function**
-```
-var foo = function bar() {
-	var foo = "Bazinga";
+> ```
+> var foo = function bar() {
+> 	var foo = "Bazinga";
+> 
+> 	function baz(foo){
+> 		foo = bar;
+> 		foo;
+> 	}
+> 	baz();
+> };
+> 
+> foo();
+> bar();
+> 
+> ```
 
-	function baz(foo){
-		foo = bar;
-		foo;
-	}
-	baz();
-};
-
-foo();
-bar();
-
-```
-*Answer:*
-
-```
-Error!
-```
-
-**Why?**
-_bar function is assigned to foo var. If you want to call bar function you must to do invoking foo as a function_
+> *Answer:*
+  ```
+  Error!
+  ```
+  **Why?**
+  _bar function is assigned to foo var. If you want to call bar function you must to do invoking foo as a function_
 
 **Eighth function**
-```
-var foo = "R2D2";
+> ```
+> var foo = "R2D2";
+> 
+> function bar() {
+> 	foo = "C3PO";
+> 	var foo;
+> }
+> 
+> bar();
+> console.log(foo);
+> ```
 
-function bar() {
-	foo = "C3PO";
-	var foo;
-}
-
-bar();
-console.log(foo);
-```
-*Answer:*
-
-```
-R2D2
-```
-**Why?**
-_First you declare a variable in the global scope. Inside bar function you set the value to local foo var to C3PO. Inside bar function var foo is hoisting to the top of his scope (bar function) so
-this value has no effect over global variable foo_
+> *Answer:*
+  ```
+  R2D2
+  ```
+  **Why?**
+  _First you declare a variable in the global scope. Inside bar function you set the value to local foo var to C3PO. Inside bar function var foo is hoisting to the top of his scope (bar function) so
+  this value has no effect over global variable foo_
 
 ##More questions
 
