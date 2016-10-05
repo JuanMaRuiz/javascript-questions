@@ -197,12 +197,12 @@ JavaScript questions
 > }
 
 > *Answer:*
->  ```
->  foo -> 5
->  bar -> ReferenceError: Can't find variable bar
->  ```
->  **Why?**
->  _If a function is defined using a function declaration ```foo()```, the whole function is hoisted to the top of the function, meaning that it can be invoked before it has been defined.
+ ```
+ 5
+ ReferenceError: Can't find variable bar
+ ```
+ **Why?**
+ _If a function is defined using a function declaration ```foo()```, the whole function is hoisted to the top of the function, meaning that it can be invoked before it has been defined.
 >  A function expression ```bar()``` (where an anonymous function is assigned to a variable) is hoisted in a similar way to variables. So the declaration will be hoisted, but not the actual function_
 
 ##More questions
