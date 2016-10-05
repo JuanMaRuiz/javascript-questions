@@ -7,11 +7,11 @@ JavaScript questions
 
 > ```
 > var foo = "Bazinga";
-> 
+>
 > function myFunction() {
 > 	foo = "Kyle";
 > }
-> 
+>
 > myFunction();
 > console.log(foo);
 > ```
@@ -38,14 +38,14 @@ JavaScript questions
 **Third function**
 > ```
 > var bar = "John Doe";
-> 
+>
 > if(true){
 > 	var bar = "Kyle";
 > 	console.log(bar);
 > }
-> 
+>
 > console.log(bar);
-> 
+>
 > ```
 
 > *Answer:*
@@ -65,15 +65,15 @@ JavaScript questions
 **Fourth function**
 > ```
 > var foo = "Bazinga";
-> 
+>
 > function myFunction() {
 > 	var foo = "Kyle";
 > 	console.log(foo);
 > }
-> 
+>
 > myFunction();
 > console.log(foo);
-> 
+>
 > ```
 
 > *Answer:*
@@ -82,7 +82,7 @@ JavaScript questions
     ```
     Kyle
     ```
-    
+
     * Second log:
     ```
     Bazinga
@@ -108,18 +108,18 @@ JavaScript questions
 **Sixth function**
 > ```
 > var foo = "Bazinga";
-> 
+>
 > function bar() {
 > 	var foo = "bb-8";
-> 
+>
 > 	function baz(foo){
 > 		foo = "R2D2";
 > 		bam = "C3PO";
 > 	}
-> 
+>
 > 	baz();
 > }
-> 
+>
 > bar();
 > foo;
 > bam;
@@ -141,17 +141,17 @@ JavaScript questions
 > ```
 > var foo = function bar() {
 > 	var foo = "Bazinga";
-> 
+>
 > 	function baz(foo){
 > 		foo = bar;
 > 		foo;
 > 	}
 > 	baz();
 > };
-> 
+>
 > foo();
 > bar();
-> 
+>
 > ```
 
 > *Answer:*
@@ -164,12 +164,12 @@ JavaScript questions
 **Eighth function**
 > ```
 > var foo = "R2D2";
-> 
+>
 > function bar() {
 > 	foo = "C3PO";
 > 	var foo;
 > }
-> 
+>
 > bar();
 > console.log(foo);
 > ```
@@ -181,6 +181,29 @@ JavaScript questions
   **Why?**
   _First you declare a variable in the global scope. Inside bar function you set the value to local foo var to C3PO. Inside bar function var foo is hoisting to the top of his scope (bar function) so
   this value has no effect over global variable foo_
+
+  **Ninth function**
+> ```
+> function foo(2,3);
+>
+> function foo(a,b) {
+>   return a + b;
+> }
+>
+> bar(1,2);
+>
+> var bar = function(x,y) {
+> return x * y;
+> }
+
+> *Answer:*
+  ```
+  foo -> 5
+  bar -> ReferenceError: Can't find variable bar
+  ```
+  **Why?**
+  _If a function is defined using a function declaration ```foo()```, the whole function is hoisted to the top of the function, meaning that it can be invoked before it has been defined.
+  A function expression ```bar()``` (where an anonymous function is assigned to a variable) is hoisted in a similar way to variables. So the declaration will be hoisted, but not the actual function_
 
 ##More questions
 
